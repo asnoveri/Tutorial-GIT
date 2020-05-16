@@ -1,0 +1,124 @@
+#Belajar mengunakan git dan github.
+
+- git init-> untuk menjalankan branch pada directory atau mengubah folder menjadi repository secara lokal
+
+- git status-> untuk melihat status dari git
+
+- git add nama git/git add . -> untuk mengadd file yang ada perubahan sebeleum di commit
+
+- git commit -m "keteranga perubahan"-> untuk merekam perubahan dari file branch
+
+- git log-> untuk melihat history perubahan dari branch
+
+- git log -3 -> untuk melihat perubahan 3 data terakhir
+
+- git log -- nama file -> untuk melihat perubahan file tertentu
+
+- git checkout (angka hash file y ingin dikembalikan)/ git checkout (angka hash) -- namafile.jenisfile -> untuk mengembalikan file yang sudah di delete
+
+- git branch nama branch-> untuk menambhkan branch baru
+
+- git branch-> menampilkan branch yang ada
+
+- git log --all --decorate --oneline --graph ->menapilkan history branch dalam bentuk graph
+
+- alias graph="git log --all --decorate --oneline --graph" ->unutk menginisiail yan atas,jadi kita hanya nya ketik graph saja untuk melihat history branchnya
+
+- git checkout <nama branch> -> untuk berpindah branch
+
+- git branch -d nama branch	-> untuk menghapus branch di lokal
+
+- git branch --merged -> untuk mencek branch yang sudah di gabungkan
+
+- git merge nama branch(yang akan di gabungkan->mengabungkan branch
+
+=============================================================================
+- masukan nama user dan email untuk merekam author yang melakukan perubahan di saat git sudah digunakan:
+	.git config — — global user.name "nama" ->global->untuk seluruh folder di komputer lokal, local->untuk folder atau repo itu saja
+	.git config — — global user.email "email"
+
+- git config --list	-> untuk melihat config list github(user.name & user.email)
+
+- git clone link repository github 	-> untuk menclone atau mengcopy repository dari github ke komputer lokal, jika di lokal belum ada reponya secara dan otomatis repo di github akan di gunakan pada repo lokal.
+
+- git remote -> digunakan untuk melihat remote repository dari github jika repo sudah di clone atau ada ke komputer lokal
+
+- git remote -v	-> untuk melihat status remote lebih detail
+
+- git remote add origin link repo github-> untuk menremote repo dari github jika repo di github belum ada isi 
+
+.git remote add asno https://github.com/asnoveri/remote_banyak_asno.git->membuat nama remote sendiri
+
+- git remote remove origin("Nama Remotnya")-> untuk mengahapus remote
+
+- git push -> untuk mengirmkan perubahan kedalam github jika repo di github sudah di clone ke komputer lokal dan jikan ada perubahan pada repo di komputer lokal
+
+- git push -u origin master	-> untuk mngrimkan perubah ke dalam github tapi -u digunakan untuk mengeset upstream untuk kedapannya pas melakukan push hanya menulis git push, origin-> nama remote dan master->nama branch
+
+- git fetch	-> untuk mengambil/mencek perubahan commit dari repo remote, unutk mencegah terjadinya conflik
+
+- git pull	-> untuk mengambil commit terbaru dari repo github dan mengabungkan ke branch/repo lokal 
+
+- git merge namaremote/namabranch_remote	-> untuk mengabungkan git lokal ke remote tertentu,dilakukan ketika repo remote mendahului satu commit repo lokal 
+
+
+#mengirimkan perubahan ke github dengan mengunakan branch baru, yang bukan branch master, agar branch master pada repo github tidak berubah-ubah.
+ 1. buat branch baru
+	- git checkout -b nama branch-> membuat branch baru sekaligus checkout ke branch tersebut, dan branch 	 ini akan digunakan untuk push ke github
+ 2. Lakukan perubahan atau edit, penambahan file pada branch baru, dan lakukan git add , dan juga lakukan git commmit -m "judul komit" .
+ 3.setelah proses no 2 selesai selanjutnya cek status.
+	git status
+ 4.cek history brach baru dengan graph.
+ 5.lakukan push ke github
+	git push origin branchbaru
+	ket: origin= nama remote
+		 branchbaru= nama branch baru yang kita buat di pc lokal
+ 6. cek history brach dengan graph lagi, lihat apakah branch baru kita sudah sama dengan branch sudah sama dengan di github.	
+ 7. lakukan pull request
+ 
+# cara melakukuan pull request ke repo master utama
+	. pilih nama branch yang akan di usulkan perubahannya pada github kita
+	. dan pilih compare& pull request
+	. isikan ketrangan pull request
+	. lalu klik pull request
+	. jika pull request sudah di setujui dan di merge si pemilik repo utama akan tampil
+	close dengan ceklis
+
+# hapus branch dilokal 	
+	.git branch -d namabranch
+
+# hapus remote branch
+	- git push namaremote --delete namabranch -> untuk menghapus nama branch yang ada pada remote.
+
+
+#git rebase-> hampir sama dengan merge/merge commit/thre-way merge (dua branch yang digabungkan harus menabahkan comit baru) yaitu untuk mengabungkan 	branch, namun gitrebase pass saat pengabung tidak melakukan penambhan satu commit baru seperti merge/merge commit/three-way merge, git rebase adalah  fast-forward merge 
+	.  git rebase master -> kita mengabungkan bracnh namabranch ke bracnh master
+	.  git rebase namabranch-> mengabungkan branch namabranch ke branch master
+note* :jika ingin mengabungkan branch master ke branch namabranch, kita harus berda di branch master terlebih dahulu, dab begitu pula sebaliknya
+  
+
+#cara mengacc pull request orang lain ke repo kita di github
+	. pilih dan klik tombol review
+	. isi komen terhadp pull request
+	. dan pilih approve jika di setujui
+	. dan pilih request change jika pull request kurang cocok
+	. atau bisa melakukan confrim pull request dengan cara pilih conversation dan pilih
+	  merge pull request dan oilih confrim marge
+
+#.gitignore
+ .gitignore ->adalah sebuah file yang bisa disimpan dalam sebuah repositiry lokal, untuk membatsai file tertentu agar tidak ikut dalam proses commit
+	cara mengunakan git .ignore:
+		. buat file .gitignore
+		. tuliskan nama file yang tidak akan di simpan atau agar tidak terbawa saat di commit
+		. namafolder/ ->jika ingin mengabaikan folder tertentu
+	atau bisa mengunjungi link github.com/gitignore
+		. pilih file yang di sarankan untuk di ignore, contoh pilih codeigneter
+	atau bisa kujungi link gitignore.io
+		. bisa otomasti mengeneret file ,ignorenya
+		. tinggal masukan os apa yang digunakan, editor apa yang di gunakan frame work apa yang di gunakan
+		. lalu klik create
+		. lalu akan tampil file gitignore yang direkomendasikan sesuai data yang kita masukan dan copy lalu pindahkan pada file .ignore lokal kita
+
+
+	
+
