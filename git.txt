@@ -18,7 +18,11 @@
 
 - git branch nama branch-> untuk menambhkan branch baru
 
-- git branch-> menampilkan branch yang ada
+- git branch-> menampilkan branch lokal
+
+- git branch -r -> menampilkan branch remote
+
+- git branch -a -> menampilkan brach lokal dan remote
 
 - git log --all --decorate --oneline --graph ->menapilkan history branch dalam bentuk graph
 
@@ -54,6 +58,8 @@
 - git push -> untuk mengirmkan perubahan kedalam github jika repo di github sudah di clone ke komputer lokal dan jikan ada perubahan pada repo di komputer lokal
 
 - git push -u origin master	-> untuk mngrimkan perubah ke dalam github tapi -u digunakan untuk mengeset upstream untuk kedapannya pas melakukan push hanya menulis git push, origin-> nama remote dan master->nama branch
+
+- git reset --hard (idcommit) membatalkan commit yang sudah di push
 
 - git fetch	-> untuk mengambil/mencek perubahan commit dari repo remote, unutk mencegah terjadinya conflik
 
